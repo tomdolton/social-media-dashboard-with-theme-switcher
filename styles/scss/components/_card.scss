@@ -1,0 +1,90 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the CARD components.
+// -----------------------------------------------------------------------------
+
+.card {
+  background: var(--background-card);
+
+  border-radius: 5px;
+
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+
+
+
+
+//
+// Big card specific classes
+// ==========================================================================
+
+
+
+
+.card__social {
+  @include flex(row, center);
+  margin-bottom: 1.5rem;
+}
+
+.card__social img {
+  margin-right: 0.5rem;
+}
+
+.card__count--big {
+  font-size: 4rem;
+}
+
+.card__followers {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+
+  margin-bottom: 2rem;
+}
+
+.card__stats {
+  @include flex(row, center);
+}
+
+.card__stats p {
+  color: var(--clr-green);
+  margin-left: 0.5rem;
+}
+
+.card__stats--red p { color: var(--clr-red) }
+
+
+
+// Modifier for big cards
+/**
+ * Linear gradient to work on top border
+ * 1. Border image must be used
+ * 2. Psuedo elements used to place borders on top of parent
+ * 3. Border image doesn't work with border radius, so parent overflow set hidden
+ */
+.card--big {
+  text-align: center;
+  position: relative;
+  overflow: hidden; /* 3 */
+
+  /* 2 */
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    content: "";
+    width: 100%;
+    border-top: 4px solid;
+    border-radius: 5px;
+  }
+}
+
+// Modifier classes for the big card top borders
+.card--facebook::before  { border-top-color: var(--clr-facebook); }
+.card--twitter::before   { border-top-color: var(--clr-twitter); }
+.card--instagram::before { border-image: linear-gradient(to right, #fdc468, #df4996) 1; } /* 1 */
+.card--youtube::before   { border-top-color: var(--clr-youtube); }

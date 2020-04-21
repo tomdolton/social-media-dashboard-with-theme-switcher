@@ -1,0 +1,16 @@
+/**
+ * Basic typography style for copy text
+ */
+body {
+  font-family: $font-family;
+  font-size: 14px;
+}
+
+h1, h2, h3 {
+  color: var(--clr-text-primary);
+}
+
+p, a {
+  color: var(--clr-text-secondary);
+  font-weight: 700;
+}

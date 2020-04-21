@@ -1,0 +1,61 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+//
+// Color variables
+// ==========================================================================
+:root{
+
+  // Primary
+  --clr-green: hsl(163, 72%, 41%);
+  --clr-red: hsl(356, 69%, 56%);
+  
+  // Social media colors
+  --clr-facebook: hsl(195, 100%, 50%);
+  --clr-twitter: hsl(203, 89%, 53%);
+  --clr-instagram: linear-gradient( hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --clr-youtube: hsl(348, 97%, 39%);
+
+  // Dark theme
+  --background: hsl(230, 17%, 14%);
+  --background-top: hsl(232, 19%, 15%);
+  --background-card: hsl(228, 28%, 20%);
+  --clr-text-primary: hsl(0, 0%, 100%);
+  --clr-text-secondary: hsl(228, 34%, 66%);
+  --clr-toggle: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  
+}
+
+// Light theme
+[data-theme="light"] {
+  --background: hsl(0, 0%, 100%);
+  --background-top: hsl(225, 100%, 98%);
+  --background-card: hsl(227, 47%, 96%);
+  --clr-text-primary: hsl(230, 17%, 14%);
+  --clr-text-secondary: hsl(228, 12%, 44%);
+  --clr-toggle: hsl(230, 22%, 74%);
+}
+
+
+//
+// Other variables
+// ==========================================================================
+
+// Regular font family
+// (https://fonts.google.com/specimen/Inter)
+$font-family: 'Inter', sans-serif;
+
+
+
+// Container's maximum width
+$max-width: 1180px;
+
+
+
+// Breakpoints
+  $bp-small: 320px;
+  $bp-medium: 768px;
+  $bp-large: 1024px;
+

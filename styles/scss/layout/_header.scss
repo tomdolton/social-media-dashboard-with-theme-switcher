@@ -1,0 +1,16 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+
+header {
+  background: var(--background-top);
+
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+
+header .container {
+  @include flex(column);
+}

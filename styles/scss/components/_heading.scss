@@ -1,0 +1,33 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the HEADING component.
+// -----------------------------------------------------------------------------
+
+
+.heading {
+  position: relative;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 2.5rem;
+
+  // Horizontal rule as psuedo element
+  &:after {
+    position: absolute;
+    left: 0;
+    bottom: -1.5rem;
+
+    content: "";
+    height: 1px;
+    width: 100%;
+
+    background: var(--clr-text-secondary);
+  }
+}
+
+.heading__title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.heading__subtitle {
+ 
+}
