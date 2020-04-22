@@ -18,18 +18,11 @@
 // 4. Layout-related sections
 @import
   'layout/header',
-  'layout/footer';
+  'layout/footer',
+  'layout/overview';
 
 // 5. Components
 @import
   'components/heading',
   'components/toggle',
   'components/card';
-
-// 6. Page-specific styles
-@import
-  'pages/home';
-
-// 7. Themes
-@import
-  'themes/default';

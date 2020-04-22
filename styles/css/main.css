@@ -447,9 +447,9 @@ p, a {
   /* 2 */
   margin-right: auto;
   /* 2 */
-  padding-left: 20px;
+  padding-left: 6.66%;
   /* 3 */
-  padding-right: 20px;
+  padding-right: 6.66%;
   /* 3 */
   width: 100%;
   /* 1 */
@@ -504,6 +504,16 @@ header .container {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.overview {
+  margin-bottom: 3rem;
+}
+
+.overview__heading {
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
 }
 
 .heading {
@@ -576,7 +586,7 @@ header .container {
   height: 0;
 }
 
-.toggle__checkbox:checked + .toggle__slider:before {
+.toggle__checkbox:checked + .toggle__slider::before {
   -webkit-transform: translateX(22px);
           transform: translateX(22px);
 }
@@ -594,7 +604,7 @@ header .container {
   transition: 0.3s;
 }
 
-.toggle__slider:before {
+.toggle__slider::before {
   position: absolute;
   left: 3px;
   bottom: 2px;
@@ -607,12 +617,100 @@ header .container {
   transition: 0.3s;
 }
 
+/**
+ * @TODO
+ * Cut and paste these into helper classes once used here/modded if need be
+ */
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.row-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .card {
   background: var(--background-card);
   border-radius: 5px;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
+  padding-top: 1.7rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.7rem;
+  padding-right: 1.7rem;
+  margin-bottom: 1rem;
+}
+
+.card__stats {
+  color: var(--clr-green);
+  font-size: 13px;
+  margin-left: 4px;
+}
+
+.card__stats--red {
+  color: var(--clr-red);
+}
+
+.card__count {
+  font-size: 1.9rem;
+}
+
+.card__top-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.card__bottom-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .card__social {
@@ -637,39 +735,14 @@ header .container {
 }
 
 .card__count--big {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 .card__followers {
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 5px;
-  margin-bottom: 2rem;
-}
-
-.card__stats {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.card__stats p {
-  color: var(--clr-green);
-  margin-left: 0.5rem;
-}
-
-.card__stats--red p {
-  color: var(--clr-red);
+  margin-bottom: 1.5rem;
 }
 
 /**
@@ -681,6 +754,8 @@ header .container {
 .card--big {
   text-align: center;
   position: relative;
+  padding-top: 2rem;
+  margin-bottom: 1.5rem;
   overflow: hidden;
   /* 3 */
   /* 2 */

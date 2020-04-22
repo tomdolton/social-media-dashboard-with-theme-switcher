@@ -50,7 +50,7 @@
   height: 0;
 
   // On checkox checked, slider circle switches
-  &:checked + .toggle__slider:before {
+  &:checked + .toggle__slider::before {
     transform: translateX(22px);
   }
 }
@@ -71,7 +71,7 @@
   transition: 0.3s;
 
   // The circle inside the silder that moves left to right
-  &:before {
+  &::before {
     position: absolute;
     left: 3px;
     bottom: 2px;

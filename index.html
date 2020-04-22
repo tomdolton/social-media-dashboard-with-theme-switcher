@@ -49,7 +49,7 @@
   <div class="container">
 
 
-
+    <!-- Big cards -->
     <div class="card card--big card--facebook">
       <a class="card__social" href="">
         <img src="images/icon-facebook.svg" alt="Facebook icon">
@@ -57,9 +57,9 @@
       </a>
       <h2 class="card__count--big">1987</h2>
       <p class="card__followers">Followers</p>
-      <div class="card__stats">
+      <div class="row-center">
         <img src="images/icon-up.svg" alt="Up">
-        <p>12 Today</p>
+        <p class="card__stats">12 Today</p>
       </div>
     </div>
 
@@ -70,9 +70,9 @@
       </a>
       <h2 class="card__count--big">1044</h2>
       <p class="card__followers">Followers</p>
-      <div class="card__stats">
+      <div class="row-center">
         <img src="images/icon-up.svg" alt="Up">
-        <p>99 Today</p>
+        <p class="card__stats">99 Today</p>
       </div>
     </div>
 
@@ -83,9 +83,9 @@
       </a>
       <h2 class="card__count--big">11k</h2>
       <p class="card__followers">Followers</p>
-      <div class="card__stats">
+      <div class="row-center">
         <img src="images/icon-up.svg" alt="Up">
-        <p>1099 Today</p>
+        <p class="card__stats">1099 Today</p>
       </div>
     </div>
 
@@ -96,53 +96,137 @@
       </a>
       <h2 class="card__count--big">8239</h2>
       <p class="card__followers">Subscribers</p>
-      <div class="card__stats card__stats--red">
+      <div class="row-center">
         <img src="images/icon-down.svg" alt="Down">
-        <p>144 Today</p>
+        <p class="card__stats card__stats--red">144 Today</p>
       </div>
     </div>
 
 
 
-    Overview - Today
 
-    Page Views
-    87
-    3%
-
-    Likes
-    52
-    2%
-
-    Likes
-    5462
-    2257%
-
-    Profile Views
-    52k
-    1375%
-
-    Retweets
-    117
-    303%
-
-    Likes
-    507
-    553%
-
-    Likes
-    107
-    19%
-
-    Total Views
-    1407
-    12%
-
+    <!-- Overview small cards -->
     <div class="overview">
 
+      <h1 class="overview__heading">Overview - Today</h1>
+
+      <div class="card">
+        <div class="card__top-row">
+          <p class="card__title">Page Views</p>
+          <img src="images/icon-facebook.svg" alt="Facebook logo">
+        </div>
+        <div class="card__bottom-row">
+          <h3 class="card__count">87</h3>
+          <div class="row-center">
+            <img src="images/icon-up.svg" alt="Up">
+            <p class="card__stats">3%</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__top-row">
+          <p class="card__title">Likes</p>
+          <img src="images/icon-facebook.svg" alt="Facebook logo">
+        </div>
+        <div class="card__bottom-row">
+          <h3 class="card__count">52</h3>
+          <div class="row-center">
+            <img src="images/icon-down.svg" alt="Down">
+            <p class="card__stats card__stats--red">2%</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__top-row">
+          <p class="card__title">Likes</p>
+          <img src="images/icon-instagram.svg" alt="Instagram logo">
+        </div>
+        <div class="card__bottom-row">
+          <h3 class="card__count">5462</h3>
+          <div class="row-center">
+            <img src="images/icon-up.svg" alt="Up">
+            <p class="card__stats">2257%</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__top-row">
+          <p class="card__title">Profile Views</p>
+          <img src="images/icon-instagram.svg" alt="Instagram logo">
+        </div>
+        <div class="card__bottom-row">
+          <h3 class="card__count">52k</h3>
+          <div class="row-center">
+            <img src="images/icon-up.svg" alt="Up">
+            <p class="card__stats">1375%</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__top-row">
+          <p class="card__title">Retweets</p>
+          <img src="images/icon-twitter.svg" alt="Twitter logo">
+        </div>
+        <div class="card__bottom-row">
+          <h3 class="card__count">117</h3>
+          <div class="row-center">
+            <img src="images/icon-up.svg" alt="Up">
+            <p class="card__stats">303%</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__top-row">
+          <p class="card__title">Likes</p>
+          <img src="images/icon-twitter.svg" alt="Twitter logo">
+        </div>
+        <div class="card__bottom-row">
+          <h3 class="card__count">507</h3>
+          <div class="row-center">
+            <img src="images/icon-up.svg" alt="Up">
+            <p class="card__stats">553%</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__top-row">
+          <p class="card__title">Likes</p>
+          <img src="images/icon-youtube.svg" alt="Youtube logo">
+        </div>
+        <div class="card__bottom-row">
+          <h3 class="card__count">107</h3>
+          <div class="row-center">
+            <img src="images/icon-down.svg" alt="Down">
+            <p class="card__stats card__stats--red">19%</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__top-row">
+          <p class="card__title">Total Views</p>
+          <img src="images/icon-youtube.svg" alt="Youtube logo">
+        </div>
+        <div class="card__bottom-row">
+          <h3 class="card__count">1407</h3>
+          <div class="row-center">
+            <img src="images/icon-down.svg" alt="Down">
+            <p class="card__stats card__stats--red">12%</p>
+          </div>
+        </div>
+      </div>
+
     </div>
+    <!--.overview end -->
 
   </div>
+  <!-- .container end -->
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.

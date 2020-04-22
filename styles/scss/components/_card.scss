@@ -2,18 +2,69 @@
 // This file contains all styles related to the CARD components.
 // -----------------------------------------------------------------------------
 
+
+/**
+ * @TODO
+ * Cut and paste these into helper classes once used here/modded if need be
+ */
+.row {
+  @include flex(row);  // Might not be used anywhere now
+}
+.row-center {
+  @include flex(row, center);
+}
+
+
+//
+// General card styles for both card types
+// ==========================================================================
+
 .card {
   background: var(--background-card);
 
   border-radius: 5px;
-
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
+  padding-top: 1.7rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.7rem;
+  padding-right: 1.7rem;
+  margin-bottom: 1rem;
+  
 }
 
 
 
+
+.card__stats {
+  color: var(--clr-green);
+  font-size: 13px;
+  margin-left: 4px;
+
+}
+
+.card__stats--red { color: var(--clr-red) }
+
+
+//
+// Card (small) specific classes
+// ==========================================================================
+
+.card__title {
+
+}
+
+.card__count {
+  font-size: 1.9rem;
+}
+
+.card__top-row {
+  @include flex(row);
+  margin-bottom: 1.5rem;
+}
+
+.card__bottom-row {
+  @include flex(row);
+  align-items: flex-end;
+}
 
 
 
@@ -34,7 +85,7 @@
 }
 
 .card__count--big {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 .card__followers {
@@ -42,19 +93,9 @@
   text-transform: uppercase;
   letter-spacing: 5px;
 
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-.card__stats {
-  @include flex(row, center);
-}
-
-.card__stats p {
-  color: var(--clr-green);
-  margin-left: 0.5rem;
-}
-
-.card__stats--red p { color: var(--clr-red) }
 
 
 
@@ -68,6 +109,9 @@
 .card--big {
   text-align: center;
   position: relative;
+
+  padding-top: 2rem;
+  margin-bottom: 1.5rem;
   overflow: hidden; /* 3 */
 
   /* 2 */
