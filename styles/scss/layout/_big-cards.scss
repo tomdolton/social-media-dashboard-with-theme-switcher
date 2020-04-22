@@ -2,6 +2,7 @@
 // This file contains all styles related to the big cards section of the site.
 // -----------------------------------------------------------------------------
 
+// Sets gird on medium+ screen, see mixin
 .big-cards-grid {
   @include grid-container;
 }

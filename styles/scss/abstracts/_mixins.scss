@@ -19,7 +19,7 @@
   justify-content: $justify;
 }
 
-// Grid set up
+// Grid set up for medium and large screens, used in two card grids
 @mixin grid-container {
   @media (min-width: $bp-medium) {
     display: grid;
@@ -31,11 +31,3 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
-
-
-// Card width
-@mixin card-width {
-  max-width: 253px;
-  width: 100%;
-}
-

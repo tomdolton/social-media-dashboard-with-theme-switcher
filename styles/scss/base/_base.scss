@@ -21,9 +21,7 @@ html {
   box-sizing: inherit;
 }
 
-/**
- * Set background color
- */
+// Set main background color
 body {
   background-color: var(--background);
 }
@@ -39,7 +37,6 @@ h1, h2, h3, p {
 a {
   text-decoration: none;
   
-
   @include on-event {
     text-decoration: underline;
   }

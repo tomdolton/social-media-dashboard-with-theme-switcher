@@ -43,6 +43,8 @@ header {
   }
 }
 
+
+
 // Sets max width of content within header to match rest of site 
 header .container {
   @include flex(column);

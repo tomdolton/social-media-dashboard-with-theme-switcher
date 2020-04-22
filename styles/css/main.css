@@ -8,18 +8,22 @@
   --background: hsl(230, 17%, 14%);
   --background-top: hsl(232, 19%, 15%);
   --background-card: hsl(228, 28%, 20%);
+  --background-card-event: hsl(228, 26%, 27%);
   --clr-text-primary: hsl(0, 0%, 100%);
   --clr-text-secondary: hsl(228, 34%, 66%);
   --clr-toggle: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --clr-toggle-event: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 }
 
 [data-theme="light"] {
   --background: hsl(0, 0%, 100%);
   --background-top: hsl(225, 100%, 98%);
   --background-card: hsl(227, 47%, 96%);
+  --background-card-event: hsl(232, 33%, 91%);
   --clr-text-primary: hsl(230, 17%, 14%);
   --clr-text-secondary: hsl(228, 12%, 44%);
   --clr-toggle: hsl(230, 22%, 74%);
+  --clr-toggle-event: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -386,9 +390,6 @@ html {
           box-sizing: inherit;
 }
 
-/**
- * Set background color
- */
 body {
   background-color: var(--background);
 }
@@ -426,15 +427,6 @@ p, a {
 }
 
 /**
- * Clear inner floats
- */
-.clearfix::after {
-  clear: both;
-  content: '';
-  display: table;
-}
-
-/**
  * Main content containers
  * 1. Make the container full-width with a maximum width
  * 2. Center it in the viewport
@@ -467,33 +459,20 @@ p, a {
   }
 }
 
-/**
- * Hide text while making it readable for screen readers
- * 1. Needed in WebKit-based browsers because of an implementation bug;
- *    See: https://code.google.com/p/chromium/issues/detail?id=457146
- */
-.hide-text {
-  overflow: hidden;
-  padding: 0;
-  /* 1 */
-  text-indent: 101%;
-  white-space: nowrap;
-}
-
-/**
- * Hide element while making it readable for screen readers
- * Shamelessly borrowed from HTML5Boilerplate:
- * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
- */
-.visually-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+.row-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 header {
@@ -690,6 +669,11 @@ header .container {
   color: var(--clr-text-primary);
 }
 
+.toggle:hover .toggle__slider,
+.toggle:focus .toggle__slider {
+  background: var(--clr-toggle-event);
+}
+
 @media (min-width: 768px) {
   .toggle {
     -webkit-box-pack: end;
@@ -733,8 +717,6 @@ header .container {
   border-radius: 34px;
   background: var(--clr-toggle);
   cursor: pointer;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 .toggle__slider::before {
@@ -750,47 +732,18 @@ header .container {
   transition: 0.3s;
 }
 
-/**
- * @TODO
- * Cut and paste these into helper classes once used here/modded if need be
- */
-.row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.row-center {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .card {
   background: var(--background-card);
   border-radius: 5px;
   padding: 1.7rem 1.7rem 1.5rem;
   margin-bottom: 1rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.card:hover {
+  background: var(--background-card-event);
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -849,38 +802,6 @@ header .container {
           align-items: flex-end;
 }
 
-.card__social {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-.card__social img {
-  margin-right: 0.5rem;
-}
-
-.card__count--big {
-  font-size: 3.5rem;
-}
-
-.card__followers {
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  margin-bottom: 1.5rem;
-}
-
 /**
  * Linear gradient to work on top border
  * 1. Border image must be used
@@ -930,5 +851,37 @@ header .container {
 /* 1 */
 .card--youtube::before {
   border-top-color: var(--clr-youtube);
+}
+
+.card__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.card__social img {
+  margin-right: 0.5rem;
+}
+
+.card__count--big {
+  font-size: 3.5rem;
+}
+
+.card__followers {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 1.5rem;
 }
 /*# sourceMappingURL=main.css.map */
