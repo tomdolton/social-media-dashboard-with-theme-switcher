@@ -1,3 +1,19 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+
+.footer {
+  font-size: 11px;
+  text-align: center;
+
+  padding-bottom: 0.5rem;
+  margin-top: 3rem;
+
+  @media (min-width: $bp-large) {
+    margin-top: 12rem;
+  }
+}
+
+.footer a {
+  color: var(--clr-text-secondary);
+}

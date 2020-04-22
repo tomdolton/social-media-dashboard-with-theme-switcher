@@ -39,6 +39,7 @@
 }
 
 
+
 //
 // Other variables
 // ==========================================================================
@@ -49,13 +50,15 @@ $font-family: 'Inter', sans-serif;
 
 
 
-// Container's maximum width
-$max-width: 1180px;
+// Container's maximum width for large screens 
+// (Cards + padding + padding + grid gap)
+$max-width-small: 350px + 25px + 25px;
+$max-width-medium: (350px * 2) + 25px + 25px + 30px;
+$max-width-large: (250px * 4) + 25px + 25px + 30px;
 
 
 
 // Breakpoints
-  $bp-small: 320px;
   $bp-medium: 768px;
   $bp-large: 1024px;
 

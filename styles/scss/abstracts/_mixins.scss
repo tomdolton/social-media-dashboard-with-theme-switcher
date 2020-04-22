@@ -19,13 +19,23 @@
   justify-content: $justify;
 }
 
+// Grid set up
+@mixin grid-container {
+  @media (min-width: $bp-medium) {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
 
-// Clearfix, use to contain floats, based on micro clearfix by Nicolas Gallagher
-// http://nicolasgallagher.com/micro-clearfix-hack/
-@mixin clearfix {
-  &:after {
-    content: " ";
-    display: table;
-    clear: both;
+  }
+  @media (min-width: $bp-large) {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
+
+
+// Card width
+@mixin card-width {
+  max-width: 253px;
+  width: 100%;
+}
+

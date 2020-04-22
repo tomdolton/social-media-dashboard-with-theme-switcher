@@ -1,14 +1,23 @@
 // -----------------------------------------------------------------------------
-// This file contains all styles related to the overview section of the site.
+// This file contains all styles related to the overview cards section of the site.
 // -----------------------------------------------------------------------------
 
+// Overview section container, becomes grid at medium+ screen sizes
 .overview {
+  @include grid-container;
   margin-bottom: 3rem;
 }
 
+// Oveerview title styling
 .overview__heading {
   font-size: 1.5rem;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
-
+  
+// When container becomes grid, title streches entire width of page
+// Margin is removed to compensate for additional grid gap spacing
+  @media (min-width: $bp-medium) {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
 }

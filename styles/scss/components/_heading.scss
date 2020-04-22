@@ -20,6 +20,11 @@
     width: 100%;
 
     background: var(--clr-text-secondary);
+
+    // Hides horizontal rule on medium+ screens
+    @media (min-width: $bp-medium) {
+      content: none;
+    }
   }
 }
 

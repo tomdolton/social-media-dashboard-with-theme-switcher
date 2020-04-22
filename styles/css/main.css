@@ -438,21 +438,33 @@ p, a {
  * Main content containers
  * 1. Make the container full-width with a maximum width
  * 2. Center it in the viewport
- * 3. Leave some space on the edges, especially valuable on small screens
+ * 3. Leave some space on the edges on small screens
  */
 .container {
-  max-width: 1180px;
+  max-width: 400px;
   /* 1 */
   margin-left: auto;
   /* 2 */
   margin-right: auto;
   /* 2 */
-  padding-left: 6.66%;
+  padding-left: 25px;
   /* 3 */
-  padding-right: 6.66%;
+  padding-right: 25px;
   /* 3 */
   width: 100%;
   /* 1 */
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 780px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1080px;
+  }
 }
 
 /**
@@ -487,7 +499,47 @@ p, a {
 header {
   background: var(--background-top);
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 2.5rem;
+  position: relative;
+  /**
+   * Psuedo element used for overlapping header background color under big cards
+   * 1. Height of the overlap area sets height and position of area
+   * 2. Border radius is set to curve edges of overlap background
+   * 3. Height of overlap is expanded in larger screens
+   */
+}
+
+@media (min-width: 768px) {
+  header {
+    padding-bottom: 0.5rem;
+  }
+}
+
+header::after {
+  /* 1 */
+  position: absolute;
+  bottom: -42px;
+  /* 1 */
+  left: 0;
+  content: "";
+  height: 42px;
+  /* 1 */
+  width: 100%;
+  border-bottom-left-radius: 20px;
+  /* 2 */
+  border-bottom-right-radius: 20px;
+  /* 2 */
+  background: var(--background-top);
+}
+
+@media (min-width: 768px) {
+  header::after {
+    /* 3 */
+    bottom: -118px;
+    /* 3 */
+    height: 118px;
+    /* 3 */
+  }
 }
 
 header .container {
@@ -506,14 +558,81 @@ header .container {
           justify-content: space-between;
 }
 
+@media (min-width: 768px) {
+  header .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .big-cards-grid {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 30px;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .big-cards-grid {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .overview {
   margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .overview {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 30px;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .overview {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .overview__heading {
   font-size: 1.5rem;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .overview__heading {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+}
+
+.footer {
+  font-size: 11px;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    margin-top: 12rem;
+  }
+}
+
+.footer a {
+  color: var(--clr-text-secondary);
 }
 
 .heading {
@@ -531,6 +650,12 @@ header .container {
   height: 1px;
   width: 100%;
   background: var(--clr-text-secondary);
+}
+
+@media (min-width: 768px) {
+  .heading:after {
+    content: none;
+  }
 }
 
 .heading__title {
@@ -565,6 +690,14 @@ header .container {
   color: var(--clr-text-primary);
 }
 
+@media (min-width: 768px) {
+  .toggle {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
 .toggle__label {
   color: var(--clr-text-secondary);
   font-weight: 700;
@@ -576,8 +709,8 @@ header .container {
 .toggle__switch {
   position: relative;
   display: inline-block;
-  width: 50px;
-  height: 25px;
+  width: 48px;
+  height: 24px;
 }
 
 .toggle__checkbox {
@@ -587,8 +720,8 @@ header .container {
 }
 
 .toggle__checkbox:checked + .toggle__slider::before {
-  -webkit-transform: translateX(22px);
-          transform: translateX(22px);
+  -webkit-transform: translateX(23px);
+          transform: translateX(23px);
 }
 
 .toggle__slider {
@@ -609,8 +742,8 @@ header .container {
   left: 3px;
   bottom: 2px;
   content: "";
-  height: 21px;
-  width: 21px;
+  height: 19px;
+  width: 19px;
   border-radius: 50%;
   background-color: var(--background-top);
   -webkit-transition: 0.3s;
@@ -656,11 +789,14 @@ header .container {
 .card {
   background: var(--background-card);
   border-radius: 5px;
-  padding-top: 1.7rem;
-  padding-bottom: 1.5rem;
-  padding-left: 1.7rem;
-  padding-right: 1.7rem;
+  padding: 1.7rem 1.7rem 1.5rem;
   margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .card {
+    margin-bottom: 0;
+  }
 }
 
 .card__stats {
@@ -755,10 +891,16 @@ header .container {
   text-align: center;
   position: relative;
   padding-top: 2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 30px;
   overflow: hidden;
   /* 3 */
   /* 2 */
+}
+
+@media (min-width: 768px) {
+  .card--big {
+    margin-bottom: 0;
+  }
 }
 
 .card--big::before {

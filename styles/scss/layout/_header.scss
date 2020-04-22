@@ -2,15 +2,53 @@
 // This file contains all styles related to the header of the site.
 // -----------------------------------------------------------------------------
 
-
+// Basic header styles
 header {
   background: var(--background-top);
 
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 2.5rem;
+  position: relative;
+
+  @media (min-width: $bp-medium) {
+    padding-bottom: 0.5rem;
+  }
+
+  /**
+   * Psuedo element used for overlapping header background color under big cards
+   * 1. Height of the overlap area sets height and position of area
+   * 2. Border radius is set to curve edges of overlap background
+   * 3. Height of overlap is expanded in larger screens
+   */
+  &::after {
+    $height: 42px; /* 1 */
+
+    position: absolute;
+    bottom: -$height; /* 1 */
+    left: 0;
+    
+    content: "";
+    height: $height; /* 1 */
+    width: 100%;
+    border-bottom-left-radius: 20px; /* 2 */
+    border-bottom-right-radius: 20px; /* 2 */
+
+    background: var(--background-top);
+
+    @media (min-width: $bp-medium) {
+      $height: 118px; /* 3 */
+      bottom: -$height; /* 3 */
+      height: $height; /* 3 */
+    }
+  }
 }
 
-
+// Sets max width of content within header to match rest of site 
 header .container {
   @include flex(column);
+
+
+  @media (min-width: $bp-medium) {
+    flex-direction: row;
+  }
 }

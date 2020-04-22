@@ -1,0 +1,7 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the big cards section of the site.
+// -----------------------------------------------------------------------------
+
+.big-cards-grid {
+  @include grid-container;
+}
