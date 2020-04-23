@@ -455,7 +455,7 @@ p, a {
 
 @media (min-width: 1024px) {
   .container {
-    max-width: 1080px;
+    max-width: 1160px;
   }
 }
 
@@ -543,6 +543,9 @@ header .container {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
 }
 
@@ -638,7 +641,7 @@ header .container {
 }
 
 .heading__title {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-bottom: 0.5rem;
 }
 

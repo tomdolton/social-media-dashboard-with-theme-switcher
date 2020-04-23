@@ -52,5 +52,6 @@ header .container {
 
   @media (min-width: $bp-medium) {
     flex-direction: row;
+    align-items: flex-start;
   }
 }

@@ -56,7 +56,7 @@ $font-family: 'Inter', sans-serif;
 // (Cards + padding + padding + grid gap)
 $max-width-small: 350px + 25px + 25px;
 $max-width-medium: (350px * 2) + 25px + 25px + 30px;
-$max-width-large: (250px * 4) + 25px + 25px + 30px;
+$max-width-large: (255px * 4) + 25px + 25px + (30px * 3);
 
 
 
